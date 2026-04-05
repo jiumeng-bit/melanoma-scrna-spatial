@@ -4,7 +4,7 @@ Complete guide to all analysis scripts with execution order, dependencies, and e
 
 ## Execution Order
 
-Scripts should be run in numerical order (01 → 11) as each script depends on outputs from previous scripts.
+Scripts should be run in numerical order (01 → 10) as each script depends on outputs from previous scripts.
 
 ```
 01_data_preprocessing.R 
@@ -17,8 +17,6 @@ Scripts should be run in numerical order (01 → 11) as each script depends on o
     ├→ 05_myeloid_cell_analysis.R ─────────→ 08_cellchat_interaction.R
     │                                          ↓
     └→ 06_T_cell_analysis.R ────────────────→ 10_ICB_therapy_analysis.R
-                                                  ↓
-    ┌────────────────────────────────────────→ 11_SLC25A39_validation.R
     ↓
 07_spatial_transcriptomics.R (Optional)
 ```
@@ -245,31 +243,6 @@ devtools::install_github('smorabit/hdWGCNA', ref='dev')
 - Pre/On-treatment comparison
 - Responder vs non-responder analysis
 - LRGS prediction
-
----
-
-### 11_SLC25A39_validation.R
-**Status**: 📊 Optional (requires experimental data)
-
-**Input**:
-- `data/experiments/SLC25A39_qPCR_results.csv`
-- `data/experiments/SLC25A39_CCK8_results.csv`
-- `data/experiments/SLC25A39_transwell_results.csv`
-- `data/experiments/SLC25A39_wound_healing_results.csv`
-- `data/experiments/SLC25A39_WB_results.csv`
-
-**Output**:
-- `results/11_SLC25A39_validation.rds`
-- Publication figures
-
-**Runtime**: ~15 minutes
-**Memory**: ~4 GB
-
-**Key Functions**:
-- qPCR analysis
-- Proliferation curves
-- Migration/invasion quantification
-- Western blot densitometry
 
 ---
 

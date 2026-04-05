@@ -14,7 +14,6 @@
 | 08_cellchat_interaction.R | Results 3.4-3.5 | Fig 4F-G, 5I-J, S4C-D | Cell communication |
 | 09_TCGA_LRGS_analysis.R | Results 3.7 | Fig 7, S8 | Prognostic model |
 | 10_ICB_therapy_analysis.R | Results 3.8 | Fig 9, S9 | Immunotherapy |
-| 11_SLC25A39_validation.R | Results 3.7 | Fig 8 | Experimental validation |
 
 ## Detailed Workflow
 
@@ -183,20 +182,6 @@
 - SLC25A39 decreases after treatment in responders
 - High LRGS correlates with poor ICB response (84% PD/SD)
 
-### 11. SLC25A39 Validation (11_SLC25A39_validation.R)
-
-**Experiments**:
-1. **qPCR**: 3 siRNAs tested, >70% knockdown efficiency
-2. **CCK-8**: Reduced proliferation with SLC25A39 knockdown
-3. **Transwell**: Reduced invasion in A375 and A2058 cells
-4. **Wound Healing**: Reduced migration
-5. **Western Blot**: Decreased Pan-Kla (global lactylation)
-
-**Key Findings**:
-- SLC25A39 promotes melanoma proliferation, invasion, migration
-- SLC25A39 regulates global lactylation levels
-- Validates LRGS model predictions
-
 ## Dependencies
 
 ### R Packages
@@ -247,7 +232,7 @@ pip install pyscenic
 
 - **Memory**: 64GB RAM recommended for large-scale integration
 - **CPU**: Multi-core processing (8+ cores)
-- **Runtime**: Full pipeline ~24-48 hours depending on dataset size
+- **Runtime**: Full pipeline ~16-20 hours depending on dataset size
 
 ## Notes
 
