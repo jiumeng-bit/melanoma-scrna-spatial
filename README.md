@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains the complete analysis pipeline for the manuscript investigating lactylation-driven metabolic reprogramming in skin cutaneous melanoma (SKCM) through integration of single-cell RNA sequencing, spatial transcriptomics, and bulk RNA-seq data.
+This repository contains the complete bioinformatics analysis pipeline for the manuscript investigating lactylation-driven metabolic reprogramming in skin cutaneous melanoma (SKCM) through integration of single-cell RNA sequencing, spatial transcriptomics, and bulk RNA-seq data.
 
 ## 📋 Overview
 
@@ -14,13 +14,12 @@ This study reveals how lactylation and glycolytic metabolic reprogramming drive 
   - **M5_ASTN2**: Highly malignant melanocyte subtype with peak glycolytic activity
   - **Mφ_CCL5**: Glycolytic macrophage recruiting CD8+ T cells via CXCL16-CXCR6 axis
   - **LRGS**: Novel 8-gene prognostic signature for survival and immunotherapy response
-  - **SLC25A39**: Functionally validated as key lactylation regulator
 
 ## 🗂️ Repository Structure
 
 ```
 .
-├── scripts/                    # 11 R analysis scripts
+├── scripts/                    # 10 R analysis scripts
 │   ├── 01_data_preprocessing.R              # Data integration & QC
 │   ├── 02_TME_heterogeneity_analysis.R      # TME characterization
 │   ├── 03_melanocyte_subtype_analysis.R     # Melanocyte subtypes (M1-M6)
@@ -30,8 +29,7 @@ This study reveals how lactylation and glycolytic metabolic reprogramming drive 
 │   ├── 07_spatial_transcriptomics.R         # Spatial metabolic landscape
 │   ├── 08_cellchat_interaction.R            # Cell-cell communication
 │   ├── 09_TCGA_LRGS_analysis.R              # Prognostic model construction
-│   ├── 10_ICB_therapy_analysis.R            # Immunotherapy response
-│   └── 11_SLC25A39_validation.R             # Experimental validation
+│   └── 10_ICB_therapy_analysis.R            # Immunotherapy response
 │
 ├── docs/                       # Documentation
 │   ├── ANALYSIS_OVERVIEW.md     # Detailed workflow documentation
@@ -72,7 +70,7 @@ See `requirements.txt` for complete list.
 
 ```r
 # Run complete pipeline
-for(i in 1:11) {
+for(i in 1:10) {
   source(sprintf("scripts/%02d_*.R", i))
 }
 
@@ -167,9 +165,9 @@ source("scripts/03_melanocyte_subtype_analysis.R")
 | 04-06 | 1-3 hours each | 16-32 GB |
 | 07 | 2 hours/sample | 16 GB |
 | 08 | 2 hours | 32 GB |
-| 09-11 | 15-60 min | 4-16 GB |
+| 09-10 | 15-60 min | 4-16 GB |
 
-**Total**: ~18-24 hours for complete pipeline
+**Total**: ~16-20 hours for complete pipeline
 
 ## 📖 Citation
 
